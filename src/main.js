@@ -21,6 +21,7 @@ import { index, mainVue, initTabs, loadTab } from './index.js';
 import { setWeather, seasonDesc, astrologySign, astroVal } from './seasons.js';
 import { getTopChange } from './wiki/change.js';
 import { enableDebug, updateDebugData } from './debug.js';
+import { initFast } from './fast.js';
 
 {
     $(document).ready(function() {
@@ -983,7 +984,7 @@ function fastLoop(){
         breakdown.p[res] = {};
     });
 
-    var time_multiplier = 0.25;
+    var time_multiplier = window.localStorage.getItem("time_multiplier") || 0.25;
 
     if (global.race.species === 'protoplasm'){
         // Early Evolution Game
@@ -11351,3 +11352,5 @@ popover('versionLog',getTopChange(changeLog),{ wide: true });
 if (global.race['start_cataclysm']){
     start_cataclysm();
 }
+
+initFast();
