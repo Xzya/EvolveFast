@@ -2358,7 +2358,7 @@ export function bloodwar(){
         global.portal.fortress['pity'] = 0;
     }
 
-    let game_base = global.stats.achieve['technophobe'] && global.stats.achieve.technophobe.l >= 5 ? 9000 : 10000;
+    let game_base = global.stats.achieve['technophobe'] && global.stats.achieve.technophobe.l >= 5 ? 400 : 500;
     let gem_chance = game_base - global.portal.fortress.pity;
     if (global.race.universe === 'evil' && global.prestige.Dark.count > 1){
         let de = global.prestige.Dark.count;
@@ -2667,7 +2667,7 @@ export function bloodwar(){
         } 
     }
 
-    if (!has_drop && global.portal.fortress.pity < 10000){
+    if (!has_drop && global.portal.fortress.pity < 500){
         global.portal.fortress.pity++;
     }
 
